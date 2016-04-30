@@ -15,4 +15,4 @@
 
 # Repository configuration
 ---
-default_repository_root: https://github.com/planetlevel/java-buildpack.git
+default_repository_root: https://download.run.pivotal.io
