@@ -137,8 +137,11 @@ module JavaBuildpack
       detected = []
       tags     = []
 
+print "AAAAAAAAA"
+
       components.each do |component|
-  print component.class + " -- "
+
+  print component.class
   
         result = component.detect
 
