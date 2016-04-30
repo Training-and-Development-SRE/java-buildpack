@@ -84,8 +84,6 @@ module JavaBuildpack
         'default_process_types' => { 'web' => commands.flatten.compact.join(' && ') }
       }.to_yaml
 
-      print "YAHOO!"
-
       @logger.debug { "Release Payload:\n#{payload}" }
 
       payload
