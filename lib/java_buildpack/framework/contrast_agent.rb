@@ -26,13 +26,11 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-      	puts "==========COMPILE=========="
         @droplet.copy_resources
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-      	puts "==========RELEASE=========="
       	contrast_agent_path = "WEB-INF/lib/contrast.jar"
         java_opts   = @droplet.java_opts
         java_opts.add_javaagent(contrast_agent_path)
@@ -43,7 +41,7 @@ module JavaBuildpack
 		agent_path = File.join ARGV[0], "WEB-INF/lib/contrast.jar"
 		print agent_path
 		if File.exist?(agent_path)
-		  puts "Ruby"
+		  puts "Contrast"
 		  exit 0
 		else
 		  exit 1
