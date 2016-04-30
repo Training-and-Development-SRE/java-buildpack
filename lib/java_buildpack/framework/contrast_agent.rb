@@ -31,6 +31,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
+        print "AAAAAAAA"
         echo '--- {}'
       end
 
