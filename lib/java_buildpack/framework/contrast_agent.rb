@@ -45,8 +45,9 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
       	puts "==========RELEASE=========="
+      	contrast_agent_path = File.join ARGV[0], "WEB-INF/lib/contrast.jar"
         @droplet.java_opts
-          .add_system_property('javaagent', 'lib/contrast.jar')
+          .add_system_property('javaagent', contrast_agent_path)
       end
 
     end
