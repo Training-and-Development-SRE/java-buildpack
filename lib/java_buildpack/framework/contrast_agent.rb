@@ -26,6 +26,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
+          puts "contrast-agent.jar=3.2.7"
 		  exit 0
 	  end
 
