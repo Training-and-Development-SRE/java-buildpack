@@ -72,8 +72,8 @@ common: &default_settings
   log_daily: false
 
   # The name of the log file.
-  # Default is newrelic_agent.log.
-  log_file_name: newrelic_agent.log
+  # Default is contrast.log.
+  log_file_name: contrast.log
 
   # The log file directory.
   # Default is the logs directory in the newrelic.jar parent directory.

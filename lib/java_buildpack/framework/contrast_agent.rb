@@ -38,8 +38,18 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        @droplet.java_opts
+        java_opts = @droplet.java_opts
+        java_opts
+          .add_javaagent(@droplet.sandbox + jar_name)
+          .add_system_property('contrast.home', @droplet.sandbox)
       end
+
+      def write_java_opts(java_opts, configuration)
+        configuration.each do |key, value|
+          java_opts.add_system_property("newrelic.config.#{key}", value)
+        end
+      end
+
 
     end
   end
