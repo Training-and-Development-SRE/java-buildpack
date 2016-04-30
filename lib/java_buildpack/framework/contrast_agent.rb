@@ -26,11 +26,13 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
+      	print "COMPILE"
         @droplet.copy_resources
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
+        print "RELEASE"
         configuration = {}
         apply_configuration(configuration)
         write_java_opts(java_opts, configuration)
@@ -42,6 +44,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
+        print "DETECT"
 		agent_path = File.join ARGV[0], "WEB-INF/lib/contrast.jar"
 		if File.exist?(agent_path)
 		  puts "#{self.class.to_s.dash_case}=3.2.7"
