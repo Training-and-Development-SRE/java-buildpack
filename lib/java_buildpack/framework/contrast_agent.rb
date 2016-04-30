@@ -33,12 +33,11 @@ module JavaBuildpack
       def release
         configuration = {}
         apply_configuration(configuration)
-        write_java_opts(java_opts, configuration)
       	contrast_agent_path = "WEB-INF/lib/contrast.jar"
         java_opts   = @droplet.java_opts
         java_opts.add_javaagent(contrast_agent_path)
-        print java_opts
-        return java_opts
+        write_java_opts(java_opts, configuration)
+        java_opts
       end
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
