@@ -36,8 +36,6 @@ module JavaBuildpack
       def initialize(context, &version_validator)
         super(context)
 
-		print '========================================'
-
         if supports?
           @version, @uri = JavaBuildpack::Repository::ConfiguredItem.find_item(@component_name, @configuration,
                                                                                &version_validator)
