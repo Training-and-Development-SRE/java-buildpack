@@ -73,12 +73,13 @@ module JavaBuildpack
       container = component_detection('container', @containers, true).first
       no_container unless container
 
+
+print "xxxxx"
+print @frameworks.to_yaml
+
+
       commands = []
-      commands << component_detection('JRE', @jres, true).first.release
-      
-print "zzzzz"
-print commands.to_yaml      
-      
+      commands << component_detection('JRE', @jres, true).first.release      
       component_detection('framework', @frameworks, false).map(&:release)
       commands << container.release
 
