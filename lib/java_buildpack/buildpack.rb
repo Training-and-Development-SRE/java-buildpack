@@ -70,6 +70,7 @@ module JavaBuildpack
     #
     # @return [String] The payload required to run the application.
     def release
+      print "AAAAA"
       container = component_detection('container', @containers, true).first
       no_container unless container
 
@@ -83,8 +84,6 @@ module JavaBuildpack
         'config_vars'           => {},
         'default_process_types' => { 'web' => commands.flatten.compact.join(' && ') }
       }.to_yaml
-
-print "AAAAAAAAAA: " + payload
 
       @logger.debug { "Release Payload:\n#{payload}" }
 
