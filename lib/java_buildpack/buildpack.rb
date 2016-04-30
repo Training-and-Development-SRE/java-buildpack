@@ -75,9 +75,14 @@ module JavaBuildpack
 
       commands = []
       commands << component_detection('JRE', @jres, true).first.release
+      
+print "zzzzz"
+print commands.to_yaml      
+      
       component_detection('framework', @frameworks, false).map(&:release)
       commands << container.release
 
+print "aaaaa"
 print commands
 
       payload = {
@@ -86,6 +91,7 @@ print commands
         'default_process_types' => { 'web' => commands.flatten.compact.join(' && ') }
       }.to_yaml
 
+print "bbbbb"
 print payload
 
       @logger.debug { "Release Payload:\n#{payload}" }
