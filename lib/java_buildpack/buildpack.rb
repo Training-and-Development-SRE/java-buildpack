@@ -74,12 +74,14 @@ module JavaBuildpack
       no_container unless container
 
       commands = []
+	print "AAAAAAA1"
       commands << component_detection('JRE', @jres, true).first.release
+	print "AAAAAAA2"
       component_detection('framework', @frameworks, false).map(&:release)
+	print "AAAAAAA3"
       commands << container.release
+	print "AAAAAAA4"
 
-	print "AAAAAAA:"
-	print commands
 
       payload = {
         'addons'                => [],
