@@ -39,9 +39,6 @@ module JavaBuildpack
         if supports?
           @version, @uri = JavaBuildpack::Repository::ConfiguredItem.find_item(@component_name, @configuration,
                                                                                &version_validator)
-                                                                               
-          print @version
-          print @uri
         else
           @version = nil
           @uri     = nil

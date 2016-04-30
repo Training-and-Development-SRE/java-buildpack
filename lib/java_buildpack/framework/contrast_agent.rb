@@ -22,7 +22,7 @@ module JavaBuildpack
   module Framework
 
     # Encapsulates the functionality for enabling zero-touch Contrast support.
-    class ContrastAgent < JavaBuildpack::Component::VersionedDependencyComponent
+    class ContrastAgent < JavaBuildpack::Component::BaseComponent
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
