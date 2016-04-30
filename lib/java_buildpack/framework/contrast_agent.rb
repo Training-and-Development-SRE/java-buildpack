@@ -24,6 +24,21 @@ module JavaBuildpack
     # Encapsulates the functionality for enabling zero-touch Contrast support.
     class ContrastAgent < JavaBuildpack::Component::BaseComponent
 
+      # (see JavaBuildpack::Component::BaseComponent#detect)
+      def detect
+		  exit 0
+	  end
+
+      # (see JavaBuildpack::Component::BaseComponent#compile)
+      def compile
+        @droplet.copy_resources
+      end
+
+      # (see JavaBuildpack::Component::BaseComponent#release)
+      def release
+        @droplet.java_opts
+      end
+
     end
   end
 end
