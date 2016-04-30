@@ -31,6 +31,9 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
+        configuration = {}
+        apply_configuration(configuration)
+        write_java_opts(java_opts, configuration)
       	contrast_agent_path = "WEB-INF/lib/contrast.jar"
         java_opts   = @droplet.java_opts
         java_opts.add_javaagent(contrast_agent_path)
@@ -48,6 +51,12 @@ module JavaBuildpack
 		  exit 1
 		end
 	  end
+
+      def apply_configuration(configuration)
+        configuration['log_file_name'] = 'STDOUT'
+        configuration['app_name'] = @application.details['application_name']
+      end
+
 
     end
   end
