@@ -42,9 +42,9 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
-		agent_path = File.join ARGV[0], "WEB-INF/contrast.jar
+		agent_path = File.join ARGV[0], "WEB-INF/contrast.jar"
 		if File.exist?(agent_path)
-		  puts agent_path
+		  puts agent_path + "=3.2.7"
 		  exit 0
 		else
 		  exit 1
