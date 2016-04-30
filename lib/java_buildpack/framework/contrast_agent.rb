@@ -30,8 +30,13 @@ module JavaBuildpack
       end
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
-      def detect
-        File.exist?("WEB-INF/lib/contrast.jar") ? "contrast" : nil
+      def detect		
+		if File.exist?("WEB-INF/lib/contrast.jar")
+		  puts "Contrast"
+		  exit 0
+		else
+		  exit 1
+		end
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
