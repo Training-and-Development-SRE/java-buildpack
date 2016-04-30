@@ -70,9 +70,10 @@ module JavaBuildpack
     #
     # @return [String] The payload required to run the application.
     def release
-      print "AAAAA"
       container = component_detection('container', @containers, true).first
       no_container unless container
+
+print "AAAAAAAAAA"
 
       commands = []
       commands << component_detection('JRE', @jres, true).first.release
