@@ -138,6 +138,8 @@ module JavaBuildpack
       tags     = []
 
       components.each do |component|
+  print component.class + " -- "
+  
         result = component.detect
 
         next unless result
