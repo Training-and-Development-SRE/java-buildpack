@@ -78,11 +78,15 @@ module JavaBuildpack
       component_detection('framework', @frameworks, false).map(&:release)
       commands << container.release
 
+print commands
+
       payload = {
         'addons'                => [],
         'config_vars'           => {},
         'default_process_types' => { 'web' => commands.flatten.compact.join(' && ') }
       }.to_yaml
+
+print payload
 
       @logger.debug { "Release Payload:\n#{payload}" }
 
@@ -137,11 +141,11 @@ module JavaBuildpack
       detected = []
       tags     = []
 
-print "AAAAAAAAA"
+#print "AAAAAAAAA"
 
       components.each do |component|
 
-  print component.class
+#print component.class
   
         result = component.detect
 
