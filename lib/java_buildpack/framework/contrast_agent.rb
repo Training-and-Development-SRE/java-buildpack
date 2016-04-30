@@ -26,38 +26,18 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-        print "arshan doesn't beleive me again"
-        @droplet.copy_resources
+        exit 0
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        print "arshan doesn't beleive me"
-        configuration = {}
-        apply_configuration(configuration)
-      	contrast_agent_path = "WEB-INF/contrast.jar"
-        java_opts   = @droplet.java_opts
-        java_opts.add_javaagent(contrast_agent_path)
-        write_java_opts(java_opts, configuration)
-        java_opts
+        exit 0
       end
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
-		agent_path = File.join ARGV[0], "WEB-INF/contrast.jar"
-		if File.exist?(agent_path)
-		  puts "contrast-agent=3.2.7"
 		  exit 0
-		else
-		  exit 1
-		end
 	  end
-
-      def apply_configuration(configuration)
-        configuration['log_file_name'] = 'STDOUT'
-        configuration['app_name'] = @application.details['application_name']
-      end
-
 
     end
   end
