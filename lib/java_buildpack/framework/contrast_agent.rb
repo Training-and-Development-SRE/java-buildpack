@@ -26,11 +26,13 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
+      	puts "==========COMPILE=========="
         @droplet.copy_resources
       end
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect		
+      	puts "==========DETECT=========="
 		if File.exist?("WEB-INF/lib/contrast.jar")
 		  puts "Contrast"
 		  exit 0
@@ -41,6 +43,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
+      	puts "==========RELEASE=========="
         @droplet.java_opts
           .add_system_property('javaagent', 'lib/contrast.jar')
       end
