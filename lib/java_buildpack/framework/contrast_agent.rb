@@ -35,10 +35,6 @@ module JavaBuildpack
       	puts "==========RELEASE=========="
       	contrast_agent_path = "WEB-INF/lib/contrast.jar"
         java_opts   = @droplet.java_opts
-        configuration = {}
-
-        write_java_opts(java_opts, configuration)
-
         java_opts.add_javaagent(contrast_agent_path)
       end
 
