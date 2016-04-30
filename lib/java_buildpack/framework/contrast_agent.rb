@@ -36,7 +36,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        @droplet.java_opts
+        puts 'config_vars:\nname: value\ndefault_process_types:\nweb: commandLine'
       end
 
     end
