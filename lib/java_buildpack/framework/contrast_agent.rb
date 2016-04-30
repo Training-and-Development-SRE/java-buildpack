@@ -36,7 +36,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        @droplet.java_opts.to_yaml
+        @droplet.java_opts
       end
 
     end
