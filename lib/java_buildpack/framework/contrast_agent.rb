@@ -26,6 +26,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
+        print "arshan doesn't beleive me again"
         @droplet.copy_resources
       end
 
