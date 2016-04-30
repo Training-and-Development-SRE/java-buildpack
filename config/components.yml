@@ -45,6 +45,7 @@ frameworks:
   - "JavaBuildpack::Framework::JrebelAgent"
 # - "JavaBuildpack::Framework::LunaSecurityProvider"
   - "JavaBuildpack::Framework::MariaDbJDBC"
+  - "JavaBuildpack::Framework::ContrastAgent"
   - "JavaBuildpack::Framework::NewRelicAgent"
   - "JavaBuildpack::Framework::PlayFrameworkAutoReconfiguration"
   - "JavaBuildpack::Framework::PlayFrameworkJPAPlugin"
