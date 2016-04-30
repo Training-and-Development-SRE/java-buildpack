@@ -37,6 +37,7 @@ module JavaBuildpack
       	contrast_agent_path = "WEB-INF/lib/contrast.jar"
         java_opts   = @droplet.java_opts
         java_opts.add_javaagent(contrast_agent_path)
+        print java_opts
         return java_opts
       end
 
@@ -44,7 +45,6 @@ module JavaBuildpack
       def detect
 		agent_path = File.join ARGV[0], "WEB-INF/lib/contrast.jar"
 		if File.exist?(agent_path)
-		  puts Time.now.to_i
 		  puts "#{self.class.to_s.dash_case}=3.2.7"
 		  exit 0
 		else
