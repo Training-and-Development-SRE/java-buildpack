@@ -32,7 +32,7 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
         start_time = Time.now
-        puts "(#{(Time.now - start_time).duration})"
+        print "(#{(Time.now - start_time).duration})"
         @droplet.copy_resources
       end
 
