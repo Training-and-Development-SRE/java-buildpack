@@ -75,10 +75,8 @@ module JavaBuildpack
 
       commands = []
       commands << component_detection('JRE', @jres, true).first.release
-      component_detection('framework', @frameworks, false).map(&:release)
-  print "AAAAAA2"
-      commands << container.release
-  print "AAAAAA3"
+ #     component_detection('framework', @frameworks, false).map(&:release)
+ #     commands << container.release
 
       payload = {
         'addons'                => [],
