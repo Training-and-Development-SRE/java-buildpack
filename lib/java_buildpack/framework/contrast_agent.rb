@@ -30,24 +30,16 @@ module JavaBuildpack
         @droplet.copy_resources
       end
 
-      # (see JavaBuildpack::Component::BaseComponent#detect)
-      def detect		
-      	puts "==========DETECT=========="
-      	contrast_agent_path = File.join ARGV[0], "WEB-INF/lib/contrast.jar"
-		if File.exist?(contrast_agent_path)
-		  puts "Contrast"
-		  exit 0
-		else
-		  exit 1
-		end
-      end
-
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
       	puts "==========RELEASE=========="
-      	contrast_agent_path = File.join ARGV[0], "WEB-INF/lib/contrast.jar"
-        @droplet.java_opts
-          .add_system_property('javaagent', contrast_agent_path)
+      	contrast_agent_path = "WEB-INF/lib/contrast.jar"
+        java_opts   = @droplet.java_opts
+        configuration = {}
+
+        write_java_opts(java_opts, configuration)
+
+        java_opts.add_javaagent(contrast_agent_path)
       end
 
     end
