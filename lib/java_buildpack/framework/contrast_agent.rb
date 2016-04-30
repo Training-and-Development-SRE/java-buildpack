@@ -40,7 +40,7 @@ module JavaBuildpack
       def detect
 		agent_path = File.join ARGV[0], "WEB-INF/lib/contrast.jar"
 		if File.exist?(agent_path)
-		  puts "#{self.class.to_s.dash_case}=#{version}"
+		  puts "#{self.class.to_s.dash_case}=3.2.7"
 		  puts agent_path
 		  exit 0
 		else
