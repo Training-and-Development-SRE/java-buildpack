@@ -34,6 +34,7 @@ module JavaBuildpack
       	contrast_agent_path = "WEB-INF/lib/contrast.jar"
         java_opts   = @droplet.java_opts
         java_opts.add_javaagent(contrast_agent_path)
+        return java_opts
       end
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
