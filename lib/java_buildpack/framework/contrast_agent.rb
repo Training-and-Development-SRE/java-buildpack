@@ -24,11 +24,17 @@ module JavaBuildpack
     # Encapsulates the functionality for enabling zero-touch Contrast support.
     class ContrastAgent < JavaBuildpack::Component::BaseComponent
 
+      # (see JavaBuildpack::Component::BaseComponent#compile)
+      def compile
+        @droplet.copy_resources
+      end
+
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
+        print "arshan doesn't beleive me"
         configuration = {}
         apply_configuration(configuration)
-      	contrast_agent_path = "WEB-INF/lib/contrast.jar"
+      	contrast_agent_path = "WEB-INF/contrast.jar"
         java_opts   = @droplet.java_opts
         java_opts.add_javaagent(contrast_agent_path)
         write_java_opts(java_opts, configuration)
