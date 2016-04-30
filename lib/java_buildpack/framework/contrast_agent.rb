@@ -31,7 +31,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        exit 0
+        echo '--- {}'
       end
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
