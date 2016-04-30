@@ -38,9 +38,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        java_opts = @droplet.java_opts
-        java_opts.add_javaagent(@droplet.sandbox + jar_name)
-                 .add_system_property('contrast.home', @droplet.sandbox)
+        @droplet.java_opts
       end
 
     end
