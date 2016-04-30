@@ -33,7 +33,8 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect		
       	puts "==========DETECT=========="
-		if File.exist?("WEB-INF/lib/contrast.jar")
+      	contrast_agent_path = File.join ARGV[0], "WEB-INF/lib/contrast.jar"
+		if File.exist?(contrast_agent_path)
 		  puts "Contrast"
 		  exit 0
 		else
