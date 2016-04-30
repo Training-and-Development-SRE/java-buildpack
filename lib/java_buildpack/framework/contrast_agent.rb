@@ -36,7 +36,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        puts 'config_vars:\nname: value\ndefault_process_types:\nweb: commandLine'
+        @droplet.java_opts.to_yaml
       end
 
     end
