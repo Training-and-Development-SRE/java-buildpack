@@ -38,17 +38,17 @@ module JavaBuildpack
         java_opts.add_javaagent(contrast_agent_path)
       end
 
-
-      # (see JavaBuildpack::Component::VersionedDependencyComponent#supports?)
-      def supports?
-        jrebel_configured?(@application.root) || jrebel_configured?(@application.root + 'WEB-INF/lib')
-      end
-
-      private
-
-      def jrebel_configured?(root_path)
-        (root_path + 'contrast.jar').exist?
-      end
+      # (see JavaBuildpack::Component::BaseComponent#detect)
+      def detect
+		agent_path = File.join ARGV[0], "WEB-INF/lib/contrast.jar"
+		print agent_path
+		if File.exist?(agent_path)
+		  puts "Ruby"
+		  exit 0
+		else
+		  exit 1
+		end
+	  end
 
     end
   end
