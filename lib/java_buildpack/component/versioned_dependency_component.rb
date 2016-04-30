@@ -100,6 +100,8 @@ module JavaBuildpack
       private
 
       def id(version)
+        print "=============" );
+        print self.class.to_s.dash_case
         "#{self.class.to_s.dash_case}=#{version}"
       end
 
