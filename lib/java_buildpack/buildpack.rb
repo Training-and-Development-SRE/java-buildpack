@@ -75,6 +75,9 @@ module JavaBuildpack
 
       commands = []
       commands << component_detection('JRE', @jres, true).first.release
+      
+      puts "JEFF JEFF"
+      
 #      component_detection('framework', @frameworks, false).map(&:release)
       commands << container.release
 
