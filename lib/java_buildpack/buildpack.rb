@@ -60,9 +60,10 @@ module JavaBuildpack
       container = component_detection('container', @containers, true).first
       no_container unless container
 
-	puts "FOUND" % container
+	puts "FOUND %s" % container
 	
       component_detection('JRE', @jres, true).first.compile
+ 	puts "FOUND2"
       component_detection('framework', @frameworks, false).each(&:compile)
       puts "COMPILING"
       container.compile
@@ -148,8 +149,9 @@ module JavaBuildpack
 
       components.each do |component|
         result = component.detect
-
         next unless result
+
+	puts "BLAH: %s" % component
 
         detected << component
         tags << result
