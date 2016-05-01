@@ -59,8 +59,6 @@ module JavaBuildpack
 
       container = component_detection('container', @containers, true).first
       no_container unless container
-
-	puts "FOUND %s" % container
 	
       component_detection('JRE', @jres, true).first.compile
  	puts "FOUND2"
@@ -139,6 +137,7 @@ module JavaBuildpack
     end
 
     def component_detection(type, components, unique)
+	puts "FOOBAR: %s" % components
       detected, _tags = detection type, components, unique
       detected
     end
