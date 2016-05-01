@@ -26,13 +26,12 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
+          puts "contrast.jar"          
 		  exit 0
 	  end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-        start_time = Time.now
-        print "(#{(Time.now - start_time).duration})"
         @droplet.copy_resources
       end
 
