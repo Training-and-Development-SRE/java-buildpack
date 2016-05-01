@@ -26,7 +26,11 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
+		if File.exist?("WEB-INF/contrast.jar)
 		  exit 0
+		else
+		  exit 1
+		end
 	  end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
@@ -37,6 +41,7 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
         java_opts = @droplet.java_opts
+        write_java_opts(java_opts,@configuration)
         java_opts
           .add_javaagent(@droplet.sandbox + jar_name)
           .add_system_property('contrast.home', @droplet.sandbox)
@@ -44,10 +49,9 @@ module JavaBuildpack
 
       def write_java_opts(java_opts, configuration)
         configuration.each do |key, value|
-          java_opts.add_system_property("newrelic.config.#{key}", value)
+          java_opts.add_system_property("contrast.config.#{key}", value)
         end
       end
-
 
     end
   end
