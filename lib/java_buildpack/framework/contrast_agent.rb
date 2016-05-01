@@ -40,9 +40,6 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        configuration.each do |key, value|
-          @droplet.java_opts.add_system_property("contrast.#{key}", value)
-        end
         java_opts.add_javaagent("WEB-INF/contrast.jar")
       end
 

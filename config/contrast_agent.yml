@@ -16,4 +16,6 @@
 # Configuration for the Contrast framework
 ---
 version: 3.+
-repository_root: "{default.repository.root}/contrast"
+repository_root: "https://app.contrastsecurity.com/"
+enabled: true
+
