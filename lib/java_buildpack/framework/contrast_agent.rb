@@ -43,7 +43,7 @@ module JavaBuildpack
         java_opts = @droplet.java_opts
         write_java_opts(java_opts,@configuration)
         java_opts
-          .add_javaagent(@droplet.sandbox + jar_name)
+          .add_javaagent(@droplet.sandbox + "WEB-INF/contrast.jar")
           .add_system_property('contrast.home', @droplet.sandbox)
       end
 

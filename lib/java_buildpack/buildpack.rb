@@ -139,6 +139,7 @@ module JavaBuildpack
 
       components.each do |component|
         result = component.detect
+
         next unless result
 
         detected << component
