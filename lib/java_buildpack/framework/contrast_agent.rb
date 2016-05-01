@@ -26,7 +26,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
-		if File.exist?("WEB-INF/contrast.jar)
+		if File.exist?("WEB-INF/contrast.jar")
 		  exit 0
 		else
 		  exit 1
