@@ -130,6 +130,8 @@ module JavaBuildpack
 
     def component_detection(type, components, unique)
       detected, _tags = detection type, components, unique
+ print "AAAAAAA"
+ print detected.to_yaml
       detected
     end
 
