@@ -82,7 +82,7 @@ module JavaBuildpack
       commands << component_detection('JRE', @jres, true).first.release
       print "JEFF JEFF3"
             
-#      component_detection('framework', @frameworks, false).map(&:release)
+      component_detection('framework', @frameworks, false).map(&:release)
       commands << container.release
       print "JEFF JEFF4"
 
