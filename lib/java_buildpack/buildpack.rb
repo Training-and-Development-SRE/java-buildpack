@@ -139,9 +139,6 @@ module JavaBuildpack
 
       components.each do |component|
         result = component.detect
-
-puts result
-
         next unless result
 
         detected << component
@@ -149,6 +146,7 @@ puts result
       end
 
       fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
+      print [detected, tags].to_yaml
       [detected, tags]
     end
 

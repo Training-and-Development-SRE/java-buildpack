@@ -26,7 +26,6 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
-          puts "contrast.jar"          
 		  exit 0
 	  end
 
