@@ -73,27 +73,16 @@ module JavaBuildpack
       container = component_detection('container', @containers, true).first
       no_container unless container
 
-
-print "xxxxx"
-print @frameworks.to_yaml
-
-
       commands = []
       commands << component_detection('JRE', @jres, true).first.release      
       component_detection('framework', @frameworks, false).map(&:release)
       commands << container.release
-
-print "aaaaa"
-print commands
 
       payload = {
         'addons'                => [],
         'config_vars'           => {},
         'default_process_types' => { 'web' => commands.flatten.compact.join(' && ') }
       }.to_yaml
-
-print "bbbbb"
-print payload
 
       @logger.debug { "Release Payload:\n#{payload}" }
 
@@ -148,12 +137,7 @@ print payload
       detected = []
       tags     = []
 
-#print "AAAAAAAAA"
-
       components.each do |component|
-
-#print component.class
-  
         result = component.detect
 
         next unless result
