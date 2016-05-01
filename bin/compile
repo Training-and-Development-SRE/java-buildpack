@@ -24,7 +24,5 @@ require 'java_buildpack/buildpack'
 build_dir = ARGV[0]
 
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s') do |buildpack|
-print "JEFF==2"
-print buildpack
   buildpack.compile
 end

@@ -60,8 +60,11 @@ module JavaBuildpack
       container = component_detection('container', @containers, true).first
       no_container unless container
 
+	puts "FOUND" % container
+	
       component_detection('JRE', @jres, true).first.compile
       component_detection('framework', @frameworks, false).each(&:compile)
+      puts "COMPILING"
       container.compile
     end
 
