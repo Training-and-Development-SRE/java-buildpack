@@ -40,7 +40,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        java_opts.add_javaagent("WEB-INF/contrast.jar")
+        @droplet.java_opts.add_javaagent("WEB-INF/contrast.jar")
       end
 
     end
