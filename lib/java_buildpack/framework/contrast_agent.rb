@@ -49,7 +49,7 @@ module JavaBuildpack
 
       def write_java_opts(java_opts, configuration)
         configuration.each do |key, value|
-          java_opts.add_system_property("contrast.config.#{key}", value)
+          java_opts.add_system_property("contrast.#{key}", value)
         end
       end
 

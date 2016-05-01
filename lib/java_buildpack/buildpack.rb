@@ -146,7 +146,6 @@ module JavaBuildpack
       end
 
       fail "Application can be run by more than one #{type}: #{names detected}" if unique && detected.size > 1
-      print [detected, tags].to_yaml
       [detected, tags]
     end
 
