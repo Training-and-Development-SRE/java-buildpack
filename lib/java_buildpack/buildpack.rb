@@ -133,7 +133,6 @@ module JavaBuildpack
     end
 
     def component_detection(type, components, unique)
-	puts "FOOBAR: %s" % components
       detected, _tags = detection type, components, unique
       detected
     end
@@ -145,8 +144,6 @@ module JavaBuildpack
       components.each do |component|
         result = component.detect
         next unless result
-
-	puts "BLAH: %s" % component
 
         detected << component
         tags << result
