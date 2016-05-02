@@ -46,7 +46,7 @@ module JavaBuildpack
       tags.concat tag_detection('framework', @frameworks, false) unless tags.empty?
       tags << "java-buildpack=#{@buildpack_version.to_s false}" unless tags.empty?
       tags = tags.flatten.compact.sort
-
+print "Buildpack.detect"
       @logger.debug { "Detection Tags: #{tags}" }
       tags
     end
