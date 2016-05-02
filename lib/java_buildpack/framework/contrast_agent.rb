@@ -26,7 +26,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
-        nil
+        "contrast.jar=3.2.7"
 	  end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
