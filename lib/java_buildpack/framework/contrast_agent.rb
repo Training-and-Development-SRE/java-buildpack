@@ -35,7 +35,8 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        @droplet.java_opts.add_javaagent( @application.root, "/WEB-INF/contrast.jar")
+      	agent = Pathname.new("WEB-INF/contrast.jar")
+        @droplet.java_opts.add_javaagent( agent )
       end
 
     end
