@@ -61,8 +61,8 @@ module JavaBuildpack
       no_container unless container
 
       component_detection('JRE', @jres, true).first.compile
-      component_detection('framework', @frameworks, false).each(&:compile)
-      container.compile
+#      component_detection('framework', @frameworks, false).each(&:compile)
+#      container.compile
     end
 
     # Generates the payload required to run the application.  The payload format is defined by the
@@ -75,7 +75,7 @@ module JavaBuildpack
 
       commands = []
       commands << component_detection('JRE', @jres, true).first.release
-#      component_detection('framework', @frameworks, false).map(&:release)
+      component_detection('framework', @frameworks, false).map(&:release)
       commands << container.release
 
       payload = {
