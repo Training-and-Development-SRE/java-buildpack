@@ -46,7 +46,6 @@ module JavaBuildpack
       tags.concat tag_detection('framework', @frameworks, false) unless tags.empty?
       tags << "java-buildpack=#{@buildpack_version.to_s false}" unless tags.empty?
       tags = tags.flatten.compact.sort
-print "Buildpack.detect"
       @logger.debug { "Detection Tags: #{tags}" }
       tags
     end
@@ -61,8 +60,8 @@ print "Buildpack.detect"
       no_container unless container
 
       component_detection('JRE', @jres, true).first.compile
-#      component_detection('framework', @frameworks, false).each(&:compile)
-#      container.compile
+      component_detection('framework', @frameworks, false).each(&:compile)
+      container.compile
     end
 
     # Generates the payload required to run the application.  The payload format is defined by the
