@@ -31,12 +31,12 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-      print "YYYdetect"
+        @droplet.copy_resources
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-      print "ZZZdetect"
+        @droplet.java_opts
       end
 
     end
