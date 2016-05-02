@@ -26,12 +26,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
-		if File.exist?('WEB-INF/contrast.jar')
-		  puts "Ruby"
-		  exit 0
-		else
-		  exit 1
-		end
+		File.exist?(@application.root + 'WEB-INF/contrast.jar') ? "contrast.jar=3.2.7" : nil
 	  end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
