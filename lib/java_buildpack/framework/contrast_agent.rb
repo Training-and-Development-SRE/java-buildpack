@@ -25,7 +25,6 @@ module JavaBuildpack
     class ContrastAgent < JavaBuildpack::Component::BaseComponent
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
-      print "JEFF-1"
       def detect
 		if File.exist?("WEB-INF/contrast.jar")
 		  exit 0
@@ -36,13 +35,11 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-        print "JEFF-2"
         @droplet.copy_resources
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-      print "JEFF-3"
         @droplet.java_opts.add_javaagent("WEB-INF/contrast.jar")
       end
 

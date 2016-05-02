@@ -72,19 +72,15 @@ module JavaBuildpack
     #
     # @return [String] The payload required to run the application.
     def release
-      print "JEFF JEFF1"
       container = component_detection('container', @containers, true).first
-      print "JEFF JEFF2"
       
       no_container unless container
 
       commands = []
       commands << component_detection('JRE', @jres, true).first.release
-      print "JEFF JEFF3"
             
       component_detection('framework', @frameworks, false).map(&:release)
       commands << container.release
-      print "JEFF JEFF4"
 
       payload = {
         'addons'                => [],
