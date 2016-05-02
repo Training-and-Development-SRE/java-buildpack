@@ -63,7 +63,6 @@ module JavaBuildpack
       component_detection('JRE', @jres, true).first.compile
       component_detection('framework', @frameworks, false).each(&:compile)
       
-      print "ABOUT TO COMPILE"
       container.compile
     end
 

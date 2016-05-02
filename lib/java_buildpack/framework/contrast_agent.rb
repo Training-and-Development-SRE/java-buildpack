@@ -27,6 +27,7 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
 		if File.exist?("WEB-INF/contrast.jar")
+		  print "contrast.jar=3.2.7"
 		  exit 0
 		else
 		  exit 1
