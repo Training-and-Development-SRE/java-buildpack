@@ -26,22 +26,17 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
-		if File.exist?("WEB-INF/contrast.jar")
-		  print "contrast.jar=3.2.7"
-		  exit 0
-		else
-		  exit 1
-		end
+      print "XXXdetect"
 	  end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-        @droplet.copy_resources
+      print "YYYdetect"
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        @droplet.java_opts.add_javaagent("WEB-INF/contrast.jar")
+      print "ZZZdetect"
       end
 
     end
