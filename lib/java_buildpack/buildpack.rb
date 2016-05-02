@@ -61,9 +61,7 @@ module JavaBuildpack
       no_container unless container
 	
       component_detection('JRE', @jres, true).first.compile
- 	puts "FOUND2"
       component_detection('framework', @frameworks, false).each(&:compile)
-      puts "COMPILING"
       container.compile
     end
 
