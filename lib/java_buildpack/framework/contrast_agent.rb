@@ -26,12 +26,11 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
-        exit 1
+        nil
 	  end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-        @droplet.copy_resources
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
