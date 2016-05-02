@@ -26,7 +26,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#detect)
       def detect
-      print "XXXdetect"
+        exit 0
 	  end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
